@@ -4,6 +4,8 @@ import com.github.vadmurzakov.featuretoggle.entity.Scan;
 import com.github.vadmurzakov.featuretoggle.service.ScanService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +22,10 @@ public class ScanController {
 	@GetMapping
 	public List<Scan> getAll() {
 		return service.getAll();
+	}
+
+	@PostMapping
+	public Scan save(@RequestBody Scan scan) {
+		return service.save(scan);
 	}
 }
