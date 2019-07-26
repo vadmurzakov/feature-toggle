@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(FeatureController.BASE)
+@RequestMapping(FeatureController.PATH)
 @RequiredArgsConstructor
 public class FeatureController {
-	static final String BASE = "/v1/feature";
+	static final String PATH = "/v1/feature";
 
 	private final FeatureService service;
 
