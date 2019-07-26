@@ -6,7 +6,7 @@
     <changeSet id="26.07.2019-1-2" author="vmurzakov">
         <insert tableName="feature">
             <column name="name">convertDangerousFile</column>
-            <column name="active">true</column>
+            <column name="active">false</column>
         </insert>
     </changeSet>
 
