@@ -22,4 +22,11 @@ public class FeatureService {
 	public List<Feature> getAll() {
 		return StreamSupport.stream(repository.findAll().spliterator(), false).collect(Collectors.toList());
 	}
+
+	public Feature update(Feature feature) {
+		if(feature.getName() == null) {
+			throw new IllegalArgumentException("id required");
+		}
+		return repository.save(feature);
+	}
 }
