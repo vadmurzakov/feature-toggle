@@ -53,8 +53,10 @@ public class FeatureBeanPostProcessor implements BeanPostProcessor {
 					Object invoke = null;
 
 					if (feature.isActive()) {
-						log.debug("Feature {} is active and running", nameFeature);
+						log.info("Feature {} is active and running", nameFeature);
 						invoke = proxy.invoke(bean, args);
+					} else {
+						log.info("Feature {} not active", nameFeature);
 					}
 					return invoke;
 				}
